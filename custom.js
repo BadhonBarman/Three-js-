@@ -1,9 +1,6 @@
-
-
 // basics setup 
 
 var scene = new THREE.Scene();
-
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 
@@ -23,21 +20,17 @@ var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 
 // creat material and color //
 
-var material = new THREE.MeshBasicMaterial( {color: 0x00ff00, wireframe: true} );
-
-
+var material = new THREE.MeshBasicMaterial( {color: 0x00ff00, wireframe: false} );
 var cube = new THREE.Mesh(geometry,material);
 scene.add(cube);
-camera.position.z = 3;
+camera.position.z = 4;
 
 
 // gamelogic / behaviour setup
-
-
 function update(){
 
 	cube.rotation.x += 0.1;
-	cube.rotation.y += 0.005;
+	cube.rotation.y += 0.05;
 
 };
 
@@ -53,7 +46,7 @@ var render = function(){
 
 
 
-// loop
+// loop for animation
 
 var GameLoop = function(){
 
